@@ -75,7 +75,7 @@ export const LandingProvider = ({children})=>{
 
             if(res.status === 200){
                 alert(res.data.message);
-                getPostData();
+                getPost();
                 return;
             }
         } catch (error) {

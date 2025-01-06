@@ -56,12 +56,10 @@ export const UserProvider = ({ children }) => {
     const handleLogin = async () => {
         try {
             const token = localStorage.getItem('token');
-            const res = await axios.post(
-                `${base_url}/user/login`, 
-                { name: loginUser }, 
+            const res = await axios.post(`${base_url}/user/login`, { name: loginUser }, 
                 {
                     headers: {
-                        Authorization: `Bearer ${token}`
+                        'Authorization': `Bearer ${token}`
                     }
                 }
             );
@@ -86,8 +84,9 @@ export const UserProvider = ({ children }) => {
                     'Authorization': `Bearer ${token}`
                 }
             });
+            console.log("here ids ", res)
             if(res.status === 200){
-                setDropDownUser(res.data.data)
+                setDropDownUser(res.data.date)
             }
         } catch (error) {
             console.error(error)

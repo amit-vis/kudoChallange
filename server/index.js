@@ -5,23 +5,10 @@ require('./config/database')
 const app = express();
 const port = 8000;
 
-const allowedOrigins = [
-    'http://localhost:3000', // Local Development
-    'https://kudo-challange.vercel.app/', // Staging
-    'https://kudochallange.onrender.com' // Production
-];
-
 app.use(bodyParser.json());
 app.use(cors({
-    origin: (origin, callback) => {
-        if (!origin || allowedOrigins.includes(origin)) {
-            callback(null, true);
-        } else {
-            callback(new Error('Not allowed by CORS'));
-        }
-    },
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization']
+    origin:['http://localhost:3000', 'https://kudo-challange-7xde.vercel.app/'],
+    credentials: true
 }));
 app.use(express.json());
 
