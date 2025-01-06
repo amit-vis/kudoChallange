@@ -12,7 +12,8 @@ module.exports.verifyToken = async (req, res, next)=>{
         jwt.verify(token, process.env.secret_key, (err, user)=>{
             if(err){
                 return res.status(401).json({
-                    message: "token is invalid or expire"
+                    message: "token is invalid or expire",
+                    err: err.message
                 })
             }
             req.user = user
