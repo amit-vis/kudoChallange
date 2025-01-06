@@ -1,1 +1,1 @@
-export const base_url = 'https://kudo-challange.vercel.app/api';
+export const base_url = 'https://kudochallange.onrender.com//api';
