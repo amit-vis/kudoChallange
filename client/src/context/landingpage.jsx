@@ -21,7 +21,8 @@ export const LandingProvider = ({children})=>{
         try {
             const res = await axios.get(`${base_url}/postkudo/getallkudos`,{
                 headers:{
-                    'Authorization': `Bearer ${token}`
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': "application/json"
                 }
             });
             if (res.status === 200) {
@@ -50,7 +51,8 @@ export const LandingProvider = ({children})=>{
             const token = localStorage.getItem('token');
             const res = await axios.post(`${base_url}/postkudo/create`, setKudos,{
                 headers:{
-                    'Authorization': `Bearer ${token}`
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': "application/json"
                 }
             });
             if(res.status === 201){
@@ -69,7 +71,8 @@ export const LandingProvider = ({children})=>{
             const token = localStorage.getItem('token');
             const res = await axios.put(`${base_url}/postkudo/toggleLike/${postId}`,{}, {
                 headers:{
-                    'Authorization': `Bearer ${token}`
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': "application/json"
                 }
             });
 

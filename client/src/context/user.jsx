@@ -26,7 +26,11 @@ export const UserProvider = ({ children }) => {
 
     const handlesignup = async () => {
         try {
-            const res = await axios.post(`${base_url}/user/create`, user);
+            const res = await axios.post(`${base_url}/user/create`, user,{
+                headers:{
+                    'Content-Type': "application/json"
+                }
+            });
             if (res.status === 201) {
                 alert(res.data.message);
                 setUser({ name: '', email: '', password: '' });
@@ -40,7 +44,11 @@ export const UserProvider = ({ children }) => {
 
     const handlesignin = async () => {
         try {
-            const res = await axios.post(`${base_url}/user/signin`, signinUser);
+            const res = await axios.post(`${base_url}/user/signin`, signinUser,{
+                headers:{
+                    'Content-Type': "application/json"
+                }
+            });
             if (res.status === 200) {
                 localStorage.setItem('token', res.data.token);
                 alert(res.data.message);
@@ -59,7 +67,8 @@ export const UserProvider = ({ children }) => {
             const res = await axios.post(`${base_url}/user/login`, { name: loginUser }, 
                 {
                     headers: {
-                        'Authorization': `Bearer ${token}`
+                        'Authorization': `Bearer ${token}`,
+                        'Content-Type': "application/json"
                     }
                 }
             );
@@ -81,7 +90,8 @@ export const UserProvider = ({ children }) => {
             const token = localStorage.getItem('token');
             const res = await axios.get(`${base_url}/user/getUsers`, {
                 headers:{
-                    'Authorization': `Bearer ${token}`
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': "application/json"
                 }
             });
             console.log("here ids ", res)

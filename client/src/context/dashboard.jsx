@@ -18,7 +18,8 @@ export const DashboardProvider = ({children})=>{
             const token = localStorage.getItem('token');
             const res = await axios.get(`${base_url}/postkudo/usercount`,{
                 headers:{
-                    'Authorization': `Bearer ${token}`
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': "application/json"
                 }
             });
             if(res.status === 200){
@@ -34,7 +35,8 @@ export const DashboardProvider = ({children})=>{
             const token = localStorage.getItem('token');
             const res = await axios.get(`${base_url}/postkudo/kudocount`,{
                 headers:{
-                    'Authorization': `Bearer ${token}`
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': "application/json"
                 }
             })
             if(res.status === 200){
@@ -50,7 +52,8 @@ export const DashboardProvider = ({children})=>{
             const token = localStorage.getItem('token');
             const res = await axios.get(`${base_url}/postkudo/mostLiked`,{
                 headers:{
-                    'Authorization': `Bearer ${token}`
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': "application/json"
                 }
             });
 
