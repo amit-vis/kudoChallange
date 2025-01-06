@@ -7,7 +7,7 @@ const port = 8000;
 
 app.use(bodyParser.json());
 app.use(cors({
-    origin:['http://localhost:3000', 'https://kudo-challange-7xde.vercel.app/'],
+    origin:['http://localhost:3000', 'https://kudo-challange-7xde-dk3u45lpt-amitvis-projects.vercel.app'],
     credentials: true
 }));
 app.use(express.json());
