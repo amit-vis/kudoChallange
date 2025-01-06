@@ -1,0 +1,73 @@
+.container{
+    text-align: center;
+    margin-top: 2%;
+    position: relative;
+}
+.btn-container{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 2% 15%;
+}
+.btn-container div{
+    padding: 0.5% 4%;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-weight: 500;
+}
+.parent-card-container{
+    width: 90%;
+    height: 500px;
+   
+    overflow-y: scroll; /* Enable vertical scrolling */
+    background-color: transparent;
+}
+.card-container{
+    background-color: white;
+    width: 70%;
+    padding: 1%;
+    margin: auto;
+    margin-bottom: 1%;
+    position: relative;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+/* Scrollbar Styling */
+.parent-card-container::-webkit-scrollbar {
+   display: none;
+}
+
+
+
+.image-container{
+    display: flex;
+    align-items: center;
+    padding-left: 2%;
+   /* padding-top: 2%; */
+}
+.image-container .kudo-text{
+    margin-left: 5%;
+    font-weight: 500;
+    /* margin-top: -2%; */
+}
+.reason-text{
+    /* margin-top: -2%; */
+    font-weight: 500;
+}
+.heart-container{
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+
+}
+.search-container{
+    position: fixed;
+    bottom: 10%;
+    right: 10%;
+    display: flex;
+    border: 2px solid black;
+    padding: 0.5% 6%;
+    border-radius: 10px;
+    background-color: white;
+}
